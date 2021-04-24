@@ -21,6 +21,9 @@ Documentation
 The full documentation is at http://{{ cookiecutter.repo_name }}.rtfd.org."""
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
 setup(
     name='{{ cookiecutter.repo_name }}',
     version='{{ cookiecutter.version }}',
@@ -33,22 +36,21 @@ setup(
         '{{ cookiecutter.repo_name }}',
     ],
     package_dir={'{{ cookiecutter.repo_name }}': '{{ cookiecutter.repo_name }}'},
-    include_package_data=True,
-    install_requires=[
+    py_modules=[
+        '{{ cookiecutter.repo_name }} / {{cookiecutter.repo_name}}.py'
     ],
-    license='MIT',
+    include_package_data=True,
+    install_requires=requirements,
     zip_safe=False,
     keywords='{{ cookiecutter.repo_name }}',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],
+    entry_points = {
+        'console_scripts' : [
+        ]
+    }
 )
