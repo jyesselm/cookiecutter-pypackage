@@ -37,7 +37,7 @@ setup(
     ],
     package_dir={'{{ cookiecutter.repo_name }}': '{{ cookiecutter.repo_name }}'},
     py_modules=[
-        '{{ cookiecutter.repo_name }} / {{cookiecutter.repo_name}}.py'
+        '{{ cookiecutter.repo_name }} / {{cookiecutter.repo_name}}'
     ],
     include_package_data=True,
     install_requires=requirements,
