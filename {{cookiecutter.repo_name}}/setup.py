@@ -15,11 +15,10 @@ if sys.argv[-1] == 'publish':
 
 readme = open('README.rst').read()
 doclink = """
-Documentation
--------------
+## Documentation
 
 The full documentation is at http://{{ cookiecutter.repo_name }}.rtfd.org."""
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+history = open('HISTORY.md').read().replace('.. :changelog:', '')
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
@@ -29,6 +28,7 @@ setup(
     version='{{ cookiecutter.version }}',
     description='{{ cookiecutter.project_short_description }}',
     long_description=readme + '\n\n' + doclink + '\n\n' + history,
+    long_description_content_type="test/markdown",
     author='{{ cookiecutter.full_name }}',
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}',
@@ -37,7 +37,7 @@ setup(
     ],
     package_dir={'{{ cookiecutter.repo_name }}': '{{ cookiecutter.repo_name }}'},
     py_modules=[
-        '{{ cookiecutter.repo_name }} / {{cookiecutter.repo_name}}'
+        '{{ cookiecutter.repo_name }}/cli
     ],
     include_package_data=True,
     install_requires=requirements,
