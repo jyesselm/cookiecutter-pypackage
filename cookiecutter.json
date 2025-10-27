@@ -1,11 +1,11 @@
 {
-	"full_name": "Joe Yesselman",
-	"email": "jyesselm@unl.edu",
-	"github_username": "jyesselm",
-	"project_name": "A Lot of Effort",
-	"repo_name": "alotofeffort",
-	"project_short_description": "Deploy static HTML sites to S3 with the simple 'alotofeffort' command.",
-	"release_date": "2022-10-15",
-	"year": "2022",
-	"version": "0.1.0"
+  "author_name": "Joe Yesselman",
+  "author_email": "jyesselm@unl.edu",
+  "github_username": "jyesselm",
+  "project_name": "{{ cookiecutter.project_name }}",
+  "repo_name": "{{ cookiecutter.repo_name }}",
+  "project_short_description": "{{ cookiecutter.project_short_description }}",
+  "release_date": "2025-10-27",
+  "year": "2025",
+  "version": "0.1.0"
 }
